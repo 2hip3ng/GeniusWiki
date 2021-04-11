@@ -1,0 +1,2 @@
+# GeniusWiki
+My Wiki
