@@ -41,10 +41,10 @@ $$
 
 线性回归的预测及真实标签均为实数值，损失函数可以使用MSE（Mean Squre Error，平均均方误差）。
 $$
-\begin{align}
-L &= \frac{1}{2m}\sum_{i=1}^{m}[h(x_i)-y_i]^2 \tag5 \\
-   &= \frac{1}{2m}\sum_{i=1}^{m}[w^Tx_i+b-y_i]^2 \tag6
-\end{align}
+L = \frac{1}{2m}\sum_{i=1}^{m}[h(x_i)-y_i]^2 \tag5
+$$
+$$
+L = \frac{1}{2m}\sum_{i=1}^{m}[w^Tx_i+b-y_i]^2 \tag6
 $$
 其中：
 
@@ -64,11 +64,10 @@ $$
 
 当偏导数为0时，函数取得极小值。
 $$
-\begin{align}
-	\frac{\partial L}{\partial w} &= \frac{\partial \frac{1}{2m}\sum_{i=1}^{m}[wx_i+b-y_i]^2}{\partial w} \tag8 \\
-										   &= \frac{1}{m}\sum_{i=1}^{m}(wx_i+b-y_i)x_i  \tag9
-	
-\end{align}
+\frac{\partial L}{\partial w} = \frac{\partial \frac{1}{2m}\sum_{i=1}^{m}[wx_i+b-y_i]^2}{\partial w} \tag8
+$$
+$$
+\frac{\partial L}{\partial w} = \frac{1}{m}\sum_{i=1}^{m}(wx_i+b-y_i)x_i  \tag9
 $$
 
 
