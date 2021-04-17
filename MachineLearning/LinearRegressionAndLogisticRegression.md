@@ -4,7 +4,7 @@
 
 线性回归，利用直线来拟合带有近线性规律的数据。如:
 
-<img src="../images/Linear-Regression-1.png" alt="线性回归样例" width="200" height="200" />
+<img src="../images/Linear-Regression-1.png" alt="线性回归样例" width="300" height="300" />
 
 ## 1.2 推导
 
