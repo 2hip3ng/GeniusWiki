@@ -62,21 +62,34 @@ $$
 
 
 
-**导数定义：$f(x)$为某一函数，当因变量$x$在$x_0$处取得增量$\Delta x$ ，因变量取得增量$\Delta y = f(x+x_0) - f(x)$。如果当$\Delta x \rightarrow 0$时，$\frac{\Delta y}{\Delta x}$的极限存在，那么称这个极限为函数$y = f(x)$在点$x_0$处的导数，记为$f'(x_0)$。**
+**导数定义：设$f(x)$为某一函数，当因变量$x$在$x_0$处取得增量$\Delta x$ ，因变量取得增量$\Delta y = f(x+x_0) - f(x)$。如果当$\Delta x \rightarrow 0$时，$\frac{\Delta y}{\Delta x}$的极限存在，那么称这个极限为函数$y = f(x)$在点$x_0$处的导数，记为$f'(x_0)$。**
 $$
 f'(x_0) = \lim_{t \rightarrow t_0} \frac{\Delta y}{\Delta x} = \lim_{t \rightarrow t_0} \frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} \tag6
 $$
-在质点运动中，导数描述了质点位置变化的“快慢”；相应的，数学上描述了函数的变化率，反映了因变量随着自变量变化而**变化的快慢程度**。
+在质点运动中，导数描述了质点位置变化的“快慢”；相应的，导数在数学上描述了函数的变化率，反映了因变量随着自变量变化而**变化的快慢程度**。
 
 ## 2.2 偏导数
 
+**偏导数定义：设$z = f(x, y)$为某一多元函数，当$y$固定在$y_0$，而$x$在$x_0$处有增量$\Delta x$，相应的函数增量为$f(x_0+\Delta x, y_0) - f(x_0, y_0)$，如果极限**
+$$
+\lim_{\Delta x \rightarrow 0} \frac{f(x_0+\Delta x, y_0) - f(x_0, y_0)}{\Delta x} \tag7
+$$
+**存在，那么称此极限为函数$f(x, y)$在点$(x_0, y_0)$处对$x$的偏导数。类似的，可以得到函数$f(x, y)$在点$(x_0, y_0)$处对$y$的偏导数。记为：**
+$$
+f_x(x_0, y_0) =  \lim_{\Delta x \rightarrow 0} \frac{f(x_0+\Delta x, y_0) - f(x_0, y_0)}{\Delta x} \tag8
+$$
 
+$$
+f_y(x_0, y_0) =  \lim_{\Delta y \rightarrow 0} \frac{f(x_0, y_0 + \Delta y) - f(x_0, y_0)}{\Delta y} \tag9
+$$
 
+类比于导数的意义，偏导数在数学上描述了多元函数的在各个坐标轴上的**变化的快慢程度**。
 
-
-
+## 
 
 ## 2.3 方向导数
+
+
 
 
 
