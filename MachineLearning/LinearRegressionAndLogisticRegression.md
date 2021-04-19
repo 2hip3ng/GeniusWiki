@@ -96,3 +96,6 @@ $$
 
 # 2. 逻辑回归（Logistic Regression）
 
+
+https://zhuanlan.zhihu.com/p/74874291
+
