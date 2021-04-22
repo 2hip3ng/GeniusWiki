@@ -1,2 +1,2 @@
 # GeniusWiki
-** My Wiki **
+`My Wiki`
