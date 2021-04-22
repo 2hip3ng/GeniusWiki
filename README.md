@@ -1,2 +1,2 @@
 # GeniusWiki
-My Wiki
+<font color='red'> My Wiki </font>
