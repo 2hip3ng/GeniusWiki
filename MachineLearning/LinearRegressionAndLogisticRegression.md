@@ -1,3 +1,5 @@
+回归人类最基础判断事物本质方法。
+
 # 1. 线性回归（Linear Regression）
 
 ## 1.1 引言
@@ -37,7 +39,7 @@ h(x) = w^Tx+b \tag4
 $$
 
 
-## 1.3 评估方法
+## 1.3 损失函数
 
 线性回归的预测及真实标签均为实数值，损失函数可以使用MSE（Mean Squre Error，平均均方误差）。
 $$
@@ -96,6 +98,90 @@ $$
 
 # 2. 逻辑回归（Logistic Regression）
 
+## 2.1 模型
+
+线性回归 $h(x) = w^Tx+b$ ，加入$Sigmoid$ 函数后值域为$[0,1]$，可以应用至分类分类问题，理解为逻辑回归。假设样本的标签为0和1， $h(x)$ 为取得预测为标签1的概率。
+$$
+h(x) = \sigma (w^Tx + b)\tag{11}
+$$
+其中， $ \sigma(x)$ 为 $Sigmoid$ 函数
+$$
+\sigma(x) = \frac{1}{1+e^{-x}} \tag{12}
+$$
+即：
+$$
+h(x) = \frac{1}{1+e^{-w^Tx+b}} \tag{13}
+$$
+先对假说模型进行简化，将偏置项$bias$看作为1并添加置特征$x$中。即：
+$$
+h(x) = \frac{1}{1+e^{-w^Tx}} \tag{14}
+$$
+根据定义，
+$$
+p(y=1|x) = h(x) = \frac{1}{1+e^{-w^Tx}} \tag{15}
+$$
+
+$$
+p(y=0|x) = 1- h(x) = 1- \frac{1}{1+e^{-w^Tx}} = \frac{e^{-w^Tx}}{1+e^{-w^Tx}} \tag{16}
+$$
+
+## 2.2 损失函数
+
+逻辑回归是一个分类问题，其极大似然函数可以设计如下：
+$$
+L(w) = \prod_{i=1}^N p(y=1|x_i)^{y_i}  p(y=0|x_i)^{1-y_i}  = \prod_{i=1}^N h(x_i)^{y_i}(1-h(x_i))^{1-y_i} \tag{17}
+$$
+对数极大似然函数如下：
+$$
+log(L(w)) = log( \prod_{i=1}^N p(y=1|x_i)^{y_i}  p(y=0|x_i)^{1-y_i} ) \tag{18}
+$$
+
+$$
+log(L(w)) =  \sum_{i=1}^N  (y_i log(h(x_i))  + (1-y_i)log(1-h(x_i)) ) \tag{19}
+$$
+
+观察发现，对数极大似然函数与二分类任务的交叉熵损失函数相同，这是因为交叉熵损失函数是从概率分布KL散度推导出来，从根本上描述了预测概率分布与真实概率分布之间。而极大似然函数通过巧妙的设计得到了相似得结果。
+
+## 2.3 参数求解
+
+$$
+\begin{align}
+	\frac{ \partial J(w) }{\partial w} &= -\frac{1}{N}\sum_{i=1}^N \{ \frac{y_i}{h(x_i)} \frac{\partial h(x_i)}{\partial w} - \frac{1-y_i}{1-h(x_i)} \frac{\partial h(x_i)}{\partial w}  \} \\
+	&= -\frac{1}{N}\sum_{i=1}^N \{ \frac{y_i}{h(x_i)} -  \frac{1-y_i}{1-h(x_i)} \}\frac{\partial h(x_i)}{\partial w}  \\
+	&=  -\frac{1}{N}\sum_{i=1}^N \{ \frac{y_i}{h(x_i)} -  \frac{1-y_i}{1-h(x_i)} \} h(x_i)(1-h(x_i)) \frac{\partial w^Tx_i}{\partial w} \\
+	&= -\frac{1}{N}\sum_{i=1}^N \{ y_i (1-h(x_i)) -(1-y_i)h(x_i) \} x_i \\
+	&= -\frac{1}{N}\sum_{i=1}^N \{ y_i - h(x_i)\} x_i
+\end{align}
+$$
+
+## 2.4 正则项
+
+
+
+
+
+
+
+
+
+# 3. 背诵项
+
+* 逻辑回归损失函数（二分类交叉熵损失函数）
+
+$$
+Loss =  \sum_{i=1}^N  (y_i log(h(x_i))  + (1-y_i)log(1-h(x_i)) ) \tag{19}
+$$
+
+* 逻辑回归梯度下降公式
+
+$$
+grad(w) =  -\frac{1}{N}\sum_{i=1}^N \{ y_i - h(x_i)\} x_i \tag{20}
+$$
+
+
+
+
+
+# 4.参考文献
 
 https://zhuanlan.zhihu.com/p/74874291
-
