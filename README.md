@@ -12,9 +12,12 @@
 # 1. 更新
 
 <details><summary>先前更新</summary><p> 
+ 
 * [逻辑回归]()  
 * [梯度下降]()   
-* </p></details>
+* 
+
+</p></details>
 
 
 
